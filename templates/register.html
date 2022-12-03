@@ -1,0 +1,86 @@
+
+<!--A Design by W3layouts
+   Author: W3layout
+   Author URL: http://w3layouts.com
+   License: Creative Commons Attribution 3.0 Unported
+   License URL: http://creativecommons.org/licenses/by/3.0/
+   -->
+<!DOCTYPE html>
+{% load static %}
+<html lang="cmn">
+
+<head>
+    <title>ESG评级服务平台 </title>
+    <!-- Meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Gadget Sign Up Form Responsive Widget, Audio and Video players, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design"
+    />
+    <script>
+        addEventListener("load", function () { setTimeout(hideURLbar, 0); }, false); function hideURLbar() { window.scrollTo(0, 1); }
+    </script>
+    <!-- Meta tags -->
+    <!-- font-awesome icons -->
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+    <!-- //font-awesome icons -->
+    <!--stylesheets-->
+    <link href="/static/css/style1.css" rel='stylesheet' type='text/css' media="all">
+    <!--//style sheet end here-->
+    <link href="//fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+</head>
+<body style="background-image: url({% static 'images/bg1.jpg' %});
+        background-size:100% 100%;background-repeat:no-repeat;">
+    <h1 class="error">平台账户注册</h1>
+	<!---728x90--->
+    <div class="w3layouts-two-grids">
+	<!---728x90--->
+        <div class="mid-class">
+            <div class="img-right-side">
+                <h3>请在此页注册您的ESG评级服务平台账户</h3>
+
+            </div>
+            <div class="txt-left-side">
+                <h2> 账户注册 </h2>
+                <form action="{% url 'register'%}" method="post">
+
+                    <div class="form-left-to-w3l">
+                        <span class="fa fa-user-o" aria-hidden="true"></span>
+                        <input type="text" name="Username" placeholder="USERNAME" required="">
+
+                        <div class="clear"></div>
+                    </div>
+                    <div class="form-left-to-w3l">
+                        <span class="fa fa-phone" aria-hidden="true"></span>
+                        <input type="text" name="Mobile" placeholder="MOBILE" required="">
+
+                        <div class="clear"></div>
+                    </div>
+                    <div class="form-left-to-w3l">
+                        <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                        <input type="text" name="Nick_name" placeholder="NICK_NAME" required="">
+
+                        <div class="clear"></div>
+                    </div>
+                    <div class="form-left-to-w3l ">
+
+                        <span class="fa fa-lock" aria-hidden="true"></span>
+                        <input type="password" name="Password" placeholder="PASSWORD" required="">
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="btnn">
+                        <button type="submit">注  册 </button>
+                    </div>
+                    {% csrf_token %}
+                </form>
+
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+	<!---728x90--->
+
+</body>
+
+</html>

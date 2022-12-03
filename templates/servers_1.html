@@ -1,0 +1,73 @@
+<!--人工智能-->
+<!--开发人：高云龙-->
+<!--开发时间：2022/9/27  11:14 -->
+
+<!DOCTYPE html>
+<html lang="cmn">
+<head>
+<title>ESG评估服务</title>
+<!-- metatags-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="wedlock register form a Flat Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta tag Keywords -->
+<!-- css -->
+<link rel="stylesheet" href="/static/css/style_3.css" type="text/css" media="all" />
+<!--// css -->
+<link href="//fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+</head>
+<body>
+	<section class="agile-header">
+		<div class="agile-heading">
+			<h1><span class="image"></span><label>ESG</label>评估服务<label>——</label>输入评估企业的信息</h1>
+		</div>
+		<div class="agile-form">
+			<form action="{% url 'servers_1'%}" method="post">
+				<div>
+
+					<select class="agile-year" name="name">
+						<option value="" label="选择公司" selected="selected">公司</option>
+						{% for company in all_companys %}
+						<option>{{company.name}}</option>
+						{% endfor %}
+					</select>
+
+
+					<select class="agile-year" name="category">
+						<option value="" label="选择行业" selected="selected">行业</option>
+						{% for category in all_Categorys %}
+						<option>{{category.name}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div>
+
+					<div class="agile-email">
+
+					<input type="text" name="date" placeholder="信息年份" required="">
+					</div>
+				</div>
+
+
+
+
+
+
+
+				<div class="agile-submit">
+					<input type="submit" value="评估">
+				</div>
+				 {% csrf_token %}
+			</form>
+		</div>
+		<div class="clear"></div>
+
+
+	</section>
+
+</body>
+</html>

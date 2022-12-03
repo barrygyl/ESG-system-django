@@ -1,0 +1,532 @@
+﻿<!DOCTYPE html>
+<html lang="cmn">
+<head>
+<meta charset="utf-8">
+<title>ESG评级服务平台</title>
+<!-- Stylesheets -->
+<link href="/static/assets/css/bootstrap.css" rel="stylesheet">
+<link href="/static/assets/css/style.css" rel="stylesheet">
+<link href="/static/assets/css/responsive.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+<link rel="shortcut icon" href="/static/assets/images/logo_favicon.png" type="image/x-icon">
+<link rel="icon" href="/static/assets/images/logo_favicon.png" type="image/x-icon">
+
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<!--[if lt IE 9]><script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<body class="hidden-bar-wrapper">
+
+<div class="page-wrapper">
+ 	
+	<!-- Preloader -->
+    <div class="preloader"></div>
+	<!-- End Preloader -->
+ 	
+ 	<!-- Header Style One -->
+    <header class="main-header">
+    	
+		<!-- Header Top -->
+        <div class="header-top">
+            <div class="auto-container">
+                <div class="inner-container clearfix">
+					<!-- Top Left -->
+					<div class="top-left clearfix">
+						<div class="text"><span>工作时间:</span> 周一到周五 9 AM - 5 PM</div>
+					</div>
+					
+					<!-- Top Right -->
+					
+                </div>
+            </div>
+        </div>
+		
+		<!-- Header Lower -->
+        <div class="header-lower">
+        	<div class="auto-container clearfix">
+
+				<!-- Logo Box -->
+				<div class="pull-left logo-box">
+					<div class="logo"><a href="index.html"><img src="/static/assets/images/logo.png" alt="" title=""></a></div>
+				</div>
+				
+				<!-- Nav Outer -->
+				<div class="nav-outer clearfix">
+					<!-- Mobile Navigation Toggler -->
+					<div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
+					<!-- Main Menu -->
+					<nav class="main-menu navbar-expand-md">
+						<div class="navbar-header">
+							<!-- Toggle Button -->
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						
+						<div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+							<ul class="navigation clearfix">
+								<li class="current dropdown"><a href="#">主页</a>
+									<ul>
+										<li><a href="{% url 'show' %}">数据展示</a></li>
+
+									</ul>
+								</li>
+
+								{% if request.user.is_authenticated %}
+								<li class="dropdown"><a href="#">服务</a>
+									<ul>
+										<li><a href="{% url 'servers' %}">ESG评估</a></li>
+
+									</ul>
+								<li class="dropdown"><a href="#">数据</a>
+									<ul>
+										<li><a href="{% url 'company' %}">已有公司ESG数据</a></li>
+
+									</ul>
+								</li>
+								{% endif %}
+
+							</ul>
+						</div>
+					</nav>
+					
+					<!-- Main Menu End-->
+					<div class="outer-box clearfix">
+						
+						<!-- Search Btn -->
+						<div class="search-box-btn transition-300ms"><span class="icon fa fa-search"></span></div>
+						
+						<!-- Nav Btn -->
+						<div class="nav-btn navSidebar-button transition-300ms"><span class="icon flaticon-menu-1"></span></div>
+							
+					</div>
+				</div>
+				
+            </div>
+        </div>
+        <!-- End Header Lower -->
+        
+		<!-- Sticky Header  -->
+        <div class="sticky-header">
+            <div class="auto-container clearfix">
+                <!--Logo-->
+                <div class="logo pull-left">
+                    <a title=""><img src="/static/assets/images/logo_1_small.png" alt="" title=""></a>
+                </div>
+                <!--Right Col-->
+                <div class="pull-right">
+				
+                    <!-- Main Menu -->
+                    <nav class="main-menu">
+                        <!--Keep This Empty / Menu will come through Javascript-->
+                    </nav>
+					<!-- Main Menu End-->
+					
+					<!-- Mobile Navigation Toggler -->
+					<div class="mobile-nav-toggler"><span class="icon flaticon-menu-1"></span></div>
+					
+                </div>
+            </div>
+        </div><!-- End Sticky Menu -->
+    
+		<!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
+            
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="index.html"><img src="/static/assets/images/logo_1_small.png" alt="" title=""></a></div>
+                <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+            </nav>
+        </div><!-- End Mobile Menu -->
+	
+    </header>
+    <!-- End Main Header -->
+	
+	<!-- Sidebar Cart Item -->
+	<div class="xs-sidebar-group info-group">
+		<div class="xs-overlay xs-bg-black"></div>
+		<div class="xs-sidebar-widget">
+			<div class="sidebar-widget-container">
+				<div class="widget-heading">
+					<a href="#" class="close-side-widget">
+						X
+					</a>
+				</div>
+				<div class="sidebar-textwidget">
+					
+					<!-- Sidebar Info Content -->
+					<div class="sidebar-info-contents">
+						<div class="content-inner">
+							<div class="logo">
+								<a href="index.html"><img src="/static/assets/images/logo.png" alt="" /></a>
+							</div>
+							<div class="content-box">
+								<h4>关于ESG</h4>
+								<p class="text">ESG，即环境、社会责任和公司治理（Environment、Social responsibility、Corporate Governance）。ESG体系是衡量企业和组织可持续发展绩效的评价体系，可作为企业长期价值的评判依据之一。由于其通用、量化、全面、系统等特征，成为国际上被不同行业普遍认可和接受的评价方法，也是投资机构考察投资标的重要策略。ESG实践包括公司治理及信息披露、评估评级和投资指引三个方面，是社会责任投资的基础，是绿色金融体系的重要组成部分。</p>
+								<a href="contact.html" class="theme-btn btn-style-one"><span class="txt">咨询</span></a>
+							</div>
+							<div class="contact-info">
+								<h4>联系方式</h4>
+								<ul class="list-style-one">
+									<li><span class="icon fa fa-location-arrow"></span>深圳，深圳大学，微众银行金融科技学院</li>
+									<li><span class="icon fa fa-phone"></span>18808898155</li>
+									<li><span class="icon fa fa-envelope"></span>1635500367@qq.com</li>
+									<li><span class="icon fa fa-clock-o"></span>工作时间: 09.00 to 18.00 周末休息</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END sidebar widget item -->
+	
+	<!-- Main Slider -->
+	<section class="main-slider">
+		<div class="rev_slider_wrapper fullwidthbanner-container"  id="rev_slider_one_wrapper" data-source="gallery">
+			<div class="rev_slider fullwidthabanner" id="rev_slider_one" data-version="5.4.1">
+				<ul>
+					
+					<li data-transition="slidingoverlayhorizontal" data-description="Slide Description"  data-index="rs-1688" data-slotamount="default" data-thumb="/static/assets/images/main-slider/bg.jpg" data-title="Slide Title">
+					<img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="/static/assets/images/main-slider/bg.jpg">
+						
+						<div class="tp-caption" 
+						data-paddingbottom="[0,0,0,0]"
+						data-paddingleft="[0,0,0,0]"
+						data-paddingright="[0,0,0,0]"
+						data-paddingtop="[0,0,0,0]"
+						data-responsive_offset="on"
+						data-type="text"
+						data-height="none"
+						data-width="['1100','800','800','500']"
+						data-whitespace="normal"
+						data-hoffset="['15','15','15','15']"
+						data-voffset="['-150','-240','-210','-210']"
+						data-x="['left','left','left','left']"
+						data-y="['middle','middle','middle','middle']"
+						data-textalign="['top','top','top','top']"
+						data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+						style="">
+							<div class="title">小试牛刀团队</div>
+						</div>
+						
+						<div class="tp-caption" 
+						data-paddingbottom="[0,0,0,0]"
+						data-paddingleft="[0,0,0,0]"
+						data-paddingright="[0,0,0,0]"
+						data-paddingtop="[0,0,0,0]"
+						data-responsive_offset="on"
+						data-type="text"
+						data-height="none"
+						data-width="['1100','800','800','500']"
+						data-whitespace="normal"
+						data-hoffset="['15','15','15','15']"
+						data-voffset="['-30','-100','-100','-110']"
+						data-x="['left','left','left','left']"
+						data-y="['middle','middle','middle','middle']"
+						data-textalign="['top','top','top','top']"
+						data-frames='[{"delay":0,"split":"chars","splitdelay":0.05,"speed":2000,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
+						style="">
+							<h1>小试牛刀 <br>ESG评估服务 </h1>
+						</div>
+						
+						<div class="tp-caption" 
+						data-paddingbottom="[0,0,0,0]"
+						data-paddingleft="[0,0,0,0]"
+						data-paddingright="[0,0,0,0]"
+						data-paddingtop="[0,0,0,0]"
+						data-responsive_offset="on"
+						data-type="text"
+						data-height="none"
+						data-width="['1100','800','800','500']"
+						data-whitespace="normal"
+						data-hoffset="['15','15','15','15']"
+						data-voffset="['100','40','15','0']"
+						data-x="['left','left','left','left']"
+						data-y="['middle','middle','middle','middle']"
+						data-textalign="['top','top','top','top']"
+						data-frames='[{"delay":0,"speed":1500,"frame":"0","from":"x:[175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:1;","mask":"x:[-100%];y:0;s:inherit;e:inherit;","to":"o:1;","ease":"power3.out"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
+						style="">
+							<div class="text">帮助企业做ESG评估 <br> 帮助投资者预估企业ESG等级</div>
+						</div>
+
+						{% if request.user.is_authenticated %}
+						<div class="tp-caption  tp-resizeme"
+						data-paddingbottom="[0,0,0,0]"
+						data-paddingleft="[0,0,0,0]"
+						data-paddingright="[0,0,0,0]"
+						data-paddingtop="[0,0,0,0]"
+						data-responsive_offset="on"
+						data-type="text"
+						data-height="none"
+						data-width="['700','700','700','500']"
+						data-whitespace="normal"
+						data-hoffset="['15','15','15','15']"
+						data-voffset="['190','150','105','100']"
+						data-x="['left','left','left','left']"
+						data-y="['middle','middle','middle','middle']"
+						data-textalign="['top','top','top','top']"
+						data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+						style="">
+							<div class="button-box">
+								<a href="{% url 'servers' %}" class="theme-btn btn-style-two"><span class="txt">ESG评估</span></a>
+								<a href="{% url 'logout' %}" class="theme-btn btn-style-two"><span class="txt">退出登录</span></a>
+							</div>
+						</div>
+						{% else %}
+						<!-- 登录 -->
+						<div class="tp-caption  tp-resizeme"
+						data-paddingbottom="[0,0,0,0]"
+						data-paddingleft="[0,0,0,0]"
+						data-paddingright="[0,0,0,0]"
+						data-paddingtop="[0,0,0,0]"
+						data-responsive_offset="on"
+						data-type="text"
+						data-height="none"
+						data-width="['700','700','700','500']"
+						data-whitespace="normal"
+						data-hoffset="['15','15','15','15']"
+						data-voffset="['190','150','105','100']"
+						data-x="['left','left','left','left']"
+						data-y="['middle','middle','middle','middle']"
+						data-textalign="['top','top','top','top']"
+						data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+						style="">
+							<div class="button-box">
+								<a href="{% url 'login'%}" class="theme-btn btn-style-two"><span class="txt">登  录</span></a>
+							</div>
+						</div>
+
+
+						{% endif %}
+
+
+						<div class="tp-caption" 
+						data-paddingbottom="[0,0,0,0]"
+						data-paddingleft="[0,0,0,0]"
+						data-paddingright="[0,0,0,0]"
+						data-paddingtop="[0,0,0,0]"
+						data-responsive_offset="on"
+						data-type="text"
+						data-height="none"
+						data-width="['700','700','700','500']"
+						data-whitespace="normal"
+						data-hoffset="['15','15','15','15']"
+						data-voffset="['260','240','180','180']"
+						data-x="['left','left','left','left']"
+						data-y="['middle','middle','middle','middle']"
+						data-textalign="['top','top','top','top']"
+						data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+						style="">
+
+						</div>
+						
+					</li>
+					
+					<li data-transition="slidingoverlayvertical" data-description="Slide Description"  data-index="rs-1689" data-slotamount="default" data-thumb="/static/assets/images/main-slider/bg.jpg" data-title="Slide Title">
+					<img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="/static/assets/images/main-slider/bg.jpg">
+					
+						<div class="tp-caption" 
+						data-paddingbottom="[0,0,0,0]"
+						data-paddingleft="[0,0,0,0]"
+						data-paddingright="[0,0,0,0]"
+						data-paddingtop="[0,0,0,0]"
+						data-responsive_offset="on"
+						data-type="text"
+						data-height="none"
+						data-width="['1100','800','800','500']"
+						data-whitespace="normal"
+						data-hoffset="['15','15','15','15']"
+						data-voffset="['-150','-240','-210','-210']"
+						data-x="['left','left','left','left']"
+						data-y="['middle','middle','middle','middle']"
+						data-textalign="['top','top','top','top']"
+						data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+						style="">
+							<div class="title">小试牛刀团队</div>
+						</div>
+						
+						<div class="tp-caption" 
+						data-paddingbottom="[0,0,0,0]"
+						data-paddingleft="[0,0,0,0]"
+						data-paddingright="[0,0,0,0]"
+						data-paddingtop="[0,0,0,0]"
+						data-responsive_offset="on"
+						data-type="text"
+						data-height="none"
+						data-width="['1100','800','800','500']"
+						data-whitespace="normal"
+						data-hoffset="['15','15','15','15']"
+						data-voffset="['-30','-100','-100','-110']"
+						data-x="['left','left','left','left']"
+						data-y="['middle','middle','middle','middle']"
+						data-textalign="['top','top','top','top']"
+						data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+						style="">
+							<h1>小试牛刀 <br>ESG评估服务 </h1>
+						</div>
+						
+						<div class="tp-caption" 
+						data-paddingbottom="[0,0,0,0]"
+						data-paddingleft="[0,0,0,0]"
+						data-paddingright="[0,0,0,0]"
+						data-paddingtop="[0,0,0,0]"
+						data-responsive_offset="on"
+						data-type="text"
+						data-height="none"
+						data-width="['1100','800','800','500']"
+						data-whitespace="normal"
+						data-hoffset="['15','15','15','15']"
+						data-voffset="['100','40','15','0']"
+						data-x="['left','left','left','left']"
+						data-y="['middle','middle','middle','middle']"
+						data-textalign="['top','top','top','top']"
+						data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+						style="">
+							<div class="text">帮助企业做ESG评估 <br> 帮助投资者预估企业ESG等级 </div>
+						</div>
+						
+						{% if request.user.is_authenticated %}
+						<div class="tp-caption  tp-resizeme"
+						data-paddingbottom="[0,0,0,0]"
+						data-paddingleft="[0,0,0,0]"
+						data-paddingright="[0,0,0,0]"
+						data-paddingtop="[0,0,0,0]"
+						data-responsive_offset="on"
+						data-type="text"
+						data-height="none"
+						data-width="['700','700','700','500']"
+						data-whitespace="normal"
+						data-hoffset="['15','15','15','15']"
+						data-voffset="['190','150','105','100']"
+						data-x="['left','left','left','left']"
+						data-y="['middle','middle','middle','middle']"
+						data-textalign="['top','top','top','top']"
+						data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+						style="">
+							<div class="button-box">
+								<a href="services.html" class="theme-btn btn-style-two"><span class="txt">ESG评估</span></a>
+								<a href="{% url 'logout'%}" class="theme-btn btn-style-two"><span class="txt">退出登录</span></a>
+							</div>
+						</div>
+						{% else %}
+						<!-- 登录 -->
+						<div class="tp-caption  tp-resizeme"
+						data-paddingbottom="[0,0,0,0]"
+						data-paddingleft="[0,0,0,0]"
+						data-paddingright="[0,0,0,0]"
+						data-paddingtop="[0,0,0,0]"
+						data-responsive_offset="on"
+						data-type="text"
+						data-height="none"
+						data-width="['700','700','700','500']"
+						data-whitespace="normal"
+						data-hoffset="['15','15','15','15']"
+						data-voffset="['190','150','105','100']"
+						data-x="['left','left','left','left']"
+						data-y="['middle','middle','middle','middle']"
+						data-textalign="['top','top','top','top']"
+						data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+						style="">
+							<div class="button-box">
+								<a href="{% url 'login'%}" class="theme-btn btn-style-two"><span class="txt">登  录</span></a>
+							</div>
+						</div>
+
+						{% endif %}
+						
+						<div class="tp-caption" 
+						data-paddingbottom="[0,0,0,0]"
+						data-paddingleft="[0,0,0,0]"
+						data-paddingright="[0,0,0,0]"
+						data-paddingtop="[0,0,0,0]"
+						data-responsive_offset="on"
+						data-type="text"
+						data-height="none"
+						data-width="['700','700','700','500']"
+						data-whitespace="normal"
+						data-hoffset="['15','15','15','15']"
+						data-voffset="['260','240','180','180']"
+						data-x="['left','left','left','left']"
+						data-y="['middle','middle','middle','middle']"
+						data-textalign="['top','top','top','top']"
+						data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+						style="">
+
+						</div>
+					
+					</li>
+
+					<!-- End images -->
+				</ul>
+			</div>
+		</div>
+	</section>
+	<!-- End Main Slider -->
+
+	
+</div>
+<!-- End PageWrapper -->
+
+<!-- Search Popup -->
+<div class="search-popup">
+	<button class="close-search style-two"><span class="flaticon-cancel-1"></span></button>
+	<button class="close-search"><span class="flaticon-up-arrow"></span></button>
+	<form method="post" action="blog.html"> <!-- 搜索 -->
+		<div class="form-group">
+			<input type="search" name="search-field" value="" placeholder="这里搜索" required="">
+			<button type="submit"><i class="fa fa-search"></i></button>
+		</div>
+	</form>
+</div>
+<!-- End Header Search -->
+
+<!-- Scroll To Top -->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-up"></span></div>
+
+<script src="/static/assets/js/jquery.js"></script>
+<script src="/static/assets/js/popper.min.js"></script>
+<script src="/static/assets/js/bootstrap.min.js"></script>
+
+<!-- Revolution Slider -->
+<script src="/static/assets/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
+<script src="/static/assets/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
+<script src="/static/assets/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+<script src="/static/assets/plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+<script src="/static/assets/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script src="/static/assets/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script src="/static/assets/plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+<script src="/static/assets/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+<script src="/static/assets/plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+<script src="/static/assets/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script src="/static/assets/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
+<script src="/static/assets/plugins/revolution/js/main-slider-script.js"></script>
+<!-- For Js Library -->
+
+<script src="/static/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/static/assets/js/jquery.fancybox.js"></script>
+<script src="/static/assets/js/appear.js"></script>
+<script src="/static/assets/js/parallax.min.js"></script>
+<script src="/static/assets/js/tilt.jquery.min.js"></script>
+<script src="/static/assets/js/jquery.paroller.min.js"></script>
+<script src="/static/assets/js/owl.js"></script>
+<script src="/static/assets/js/wow.js"></script>
+<script src="/static/assets/js/validate.js"></script>
+<script src="/static/assets/js/nav-tool.js"></script>
+<script src="/static/assets/js/jquery-ui.js"></script>
+<script src="/static/assets/js/script.js"></script>
+
+</body>
+</html>

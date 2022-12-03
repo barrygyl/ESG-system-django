@@ -1,0 +1,65 @@
+<!-- 高云龙 -->
+<!-- 开发时间：2022/10/21  10:45 -->
+<!-- 项   目：ESG system -->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>html 表格导出</title>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/jquery.table2excel.js"></script>
+  <script language="JavaScript" type="text/javascript">
+
+   function ExportToExcel() {
+         $("#tableExcel").table2excel({
+           exclude : ".noExl", //过滤位置的 css 类名
+           filename : "表格导出.xls", //文件名称
+           name: "Excel Document Name.xlsx",
+           exclude_img: false,//是否导出图片 false导出
+           exclude_links: true,//是否导出链接 false导出
+           exclude_inputs: true//是否导出输入框的值 true导出
+         });
+    }
+  </script>
+</head>
+<body>
+<div >
+  <button type="button" id="btnExport" onclick="ExportToExcel();">导出Excel</button>
+</div>
+<div id="myDiv">
+  <table id="tableExcel" width="100%" border="1" cellspacing="0" cellpadding="0">
+    <tr>
+      <td colspan="5" align="center">html 表格导出道Excel</td>
+    </tr>
+    <tr class="noExl">
+      <td>列标题1</td>
+      <td>列标题2</td>
+      <td>类标题3</td>
+      <td>列标题4</td>
+      <td>列标题5</td>
+    </tr>
+    <tr>
+      <td>aaa</td>
+      <td colspan="2">bbb</td>
+      <td>ccc</td>
+      <td>ddd</td>
+
+    </tr>
+    <tr>
+      <td>AAA</td>
+      <td>BBB</td>
+      <td>CCC</td>
+      <td>DDD</td>
+      <td><img style="width:200px;height:100px;" src="img/test.jpg" /></td>
+    </tr>
+    <tr>
+      <td>FFF</td>
+      <td>GGG</td>
+      <td>HHH</td>
+      <td>III</td>
+      <td><img style="width:200px;height:100px;" src="https://img2018.cnblogs.com/blog/1004756/201810/1004756-20181018111123383-202220146.png"/></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

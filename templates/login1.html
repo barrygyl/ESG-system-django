@@ -1,0 +1,78 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="cmn">
+
+<!-- Head -->
+<head>
+
+<title>ESG评级服务平台</title>
+
+<!-- Meta-Tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="Natural Signin Form Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //Meta-Tags -->
+
+<!-- Style --> <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="all">
+
+<!-- Fonts -->
+<link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+<!-- //Fonts -->
+
+</head>
+<!-- //Head -->
+
+<!-- Body -->
+<body>
+<div class="banner">
+<div class="agileinfo-dot">
+	<h1>ESG评级服务平台</h1>
+
+	<div class="w3layoutscontaineragileits">
+	<h2>登  录</h2>
+		<form action="{% url 'login'%}" method="post">
+
+			<input type="text" Name="Username" placeholder="USERNAME" required="">
+			<input type="password" Name="Password" placeholder="PASSWORD" required="">
+			<div>{% if login_form.errors %}{% for key, error in login_form.errors.items %}{{error}}{%endfor%}{% else %}{{msg}}{% endif %}</div>
+			<ul class="agileinfotickwthree">
+				<li>
+					<input type="checkbox" id="brand1" value="">
+					<label for="brand1"><span></span>记住我</label>
+					<a href="{% url 'register'%}">注册</a>
+				</li>
+			</ul>
+			<div class="aitssendbuttonw3ls">
+				<input type="submit" value="登录">
+
+
+				<div class="clear"></div>
+			</div>
+
+			{% csrf_token %}
+		</form>
+
+	</div>
+	
+	
+
+
+</div>
+</div>
+	
+	
+	
+
+</body>
+<!-- //Body -->
+
+</html>
